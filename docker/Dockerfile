@@ -14,4 +14,5 @@ ip addr del `ip addr |grep "inet " |grep -v 127|awk '{print $2}'` dev eth0 && \
             ip route add 172.17.0.0/16 via 0.0.0.0 dev eth0 && \
             service ssh start &&\
             mkdir -p /root/.ssh && chmod 600 /root/.ssh && cp /sshkeys/key.pub /root/.ssh/authorized_keys && \
+            echo "master 172.17.0.1" >> /etc/hosts && \
             bash
