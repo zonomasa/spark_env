@@ -24,6 +24,6 @@ wget ${FTP}/spark-${SPARK_VER}/${SPARK_BIN}.tgz
 tar xzvf ${SPARK_BIN}.tgz
 
 cd  ${SPARK_BIN}
-sed -e 's/log4j.rootCategory=INFO/log4j.rootCategory=WARN/g' conf/log4j.properties.template >conf/log4j.properties
+#sed -e 's/log4j.rootCategory=INFO/log4j.rootCategory=WARN/g' conf/log4j.properties.template >conf/log4j.properties
 
 cp conf/slaves.template conf/slaves
