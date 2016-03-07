@@ -12,9 +12,13 @@ rm -rf ${WORK}/tmp/spark_env
 mkdir -p ${WORK}/tmp/spark_env
 
 ssh-keygen -f ${WORK}/tmp/spark_env/key -N ""
-
+set +e
 sudo docker rm -f `sudo docker ps -a -q`
+set -e 
+popd
+pushd ./docker
 sudo docker build -t ${BASE}:${ID} .
+
 
 for i in `seq 2 $NUM_NODE`
 do
